@@ -25,6 +25,21 @@ Nullable(1) + Nullable()
 
 Note that operations mixing `Nullable` and scalars (e.g. `1 + Nullable()`) are not supported.
 
+The get() function is very useful to extract the value from the Nullable wrapper.
+
+example :
+```julia
+julia> a = Nullable{String}("14:00:00")
+Nullable{String}("14:00:00")
+
+julia> get(a)
+"14:00:00"
+
+julia> typeof(get(a))
+String
+```
+
+
 ## The `NullableArray` Type
 
 `Nullable` objects can be stored in a standard `Array` just like any value:
